@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografi Sahabat Nabi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+        .judul-besar {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .judul-kecil {
+            color: #34495e;
+            margin-top: 20px;
+        }
+        p {
+            color: #555;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="judul-besar">Biografi Sahabat Nabi</h1>
+    <h2 class="judul-kecil">Abu Bakar Ash-Shiddiq</h2>
+    <p>
+       Abu Bakar As-Shiddiq merupakan sahabat pertama Rasulullah SAW. Beliau juga termasuk ke dalam orang-orang golongan pertama yang mempercayai Nabi Muhammad dan memeluk agama Islam.
+
+Setelah Nabi wafat, beliau jugalah orang pertama yang melanjutkan kepemimpinan Nabi Muhammad SAW.
+
+Ketika Nabi menyiarkan agama Islam di tanah Arab, Abu Bakar As-Shiddiq selalu menemani dan menjaga Nabi Muhammad SAW. Beliau pun adalah orang yang menemani Nabi pada saat melakukan hijrah dari Mekkah ke Madinah.
+
+Meskipun ancaman pembunuhan kerap ditujukan padanya, Abu Bakar tak gentar dan terus maju membela Islam. Sifat-sifat yang perlu diteladani dari sosok beliau adalah lemah lembut, penuh sabar dan selalu berkata jujur.
+
+Oleh sebabnya gelar “As-Shiddiq” yang berarti berkata benar disematkan untuk beliau.
+
+Dari sumber-sumber sejarah Islam, banyak dikatakan bahwa Abu Bakar adalah seorang yang dikenal sebagai pedagang, hakim yang memegang kedudukan tinggi di masanya, orang yang terpelajar dan dapat menafsirkan mimpi.
+
+Nabi Muhammad sangat mempercayai Abu Bakar. Di akhir hayat Nabi, beliau menunjuk Abu Bakar untuk menggantikannya sebagai imam sholat berjamaah.
+
+Ini juga merupakan suatu pertanda bahwa kelak beliaulah yang akan menggantikan Nabi sebagai khalifah umat muslim.
+    </p>
+    <h2 class="judul-kecil">Kisah Singkat</h2>
+    <p>
+        Abu Bakar lahir di Mekkah dan termasuk orang pertama yang memeluk Islam. Ia sangat dermawan dan selalu mendampingi Rasulullah dalam berbagai peristiwa penting, seperti saat Hijrah ke Madinah.
+    </p>
+    <footer>
+        Fajri &copy; 2024
+    </footer>
+</body>
+</html>
