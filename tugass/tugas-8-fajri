@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Halaman Tema: Olahraga</title>
+</head>
+<body>
+  <h1> Tema: Olahraga </h1>
+
+  <!-- a) Video menggunakan file yang sudah di-install -->
+  <section>
+    <h2>Video 1 (file lokal Installed)</h2>
+    <video width="640" controls>
+      <source src="FULL SET 1-4 PENENTUAN MENUJU FINAL - REDSPARK VS HYUNDAI PLAYOFF SEMIFINAL V-LEAGUE 29 Maret 2025.mp4" type="video/mp4">
+      Browser Anda tidak mendukung tag video.
+    </video>
+  </section>
+
+  <!-- b) Video menggunakan embed YouTube -->
+  <section>
+    <h2>Video 2 (YouTube Embed)</h2>
+    <iframe width="560" height="315"
+      src="Nuntakarn Aimsaard _ SF Thailand Masters 2025 WD.mp4"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </section>
+
+  <!-- Audio: kedua audio menggunakan file lokal -->
+  <section>
+    <h2>Audio 1 (file lokal)</h2>
+    <audio controls>
+      <source src="/tugas-8.html/Surah AR-RAHMAN Surah AL-WAQIAH Surah AL-MULK Surah YASIN Surah AL-KAHFI.mp4" type="audio/mpeg">
+      Browser Anda tidak mendukung tag audio.
+    </audio>
+  </section>
+
+  <section>
+    <h2>Audio 2 (file lokal)</h2>
+    <audio controls>
+      <source src="tugas-8.html/Surah AR-RAHMAN Surah AL-WAQIAH Surah AL-MULK Surah YASIN Surah AL-KAHFI.mp4" type="audio/mpeg">
+      Browser Anda tidak mendukung tag audio.
+    </audio>
+  </section>
+</body>
+</html>
