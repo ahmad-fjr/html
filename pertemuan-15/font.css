@@ -1,0 +1,32 @@
+h1{
+font-size: 24px;
+color: slateblue;
+}
+
+h1{
+font-size: 24px;
+color: slateblue;
+}
+
+.normal{
+    font-style: normal;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.italic{
+    font-style: italic;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.oblique{
+font-style: oblique;
+font-size: 20px;
+font-weght:500;
+}
+
+.normal{
+   font-family: "Bitcount Grid Double", system-ui
+
+}

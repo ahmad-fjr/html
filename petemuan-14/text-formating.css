@@ -1,0 +1,43 @@
+header h1 {
+    text-align: center;
+}
+
+body {
+    direction: rtl;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.left-to-right {
+    text-align: start;
+}
+
+.right-to-left {
+    text-align: end;
+}
+
+.upperline {
+    text-decoration: overline;
+    line-height: 1,6;
+}
+.lowerline {
+    text-decoration: underline;
+    line-height: 1,6;
+}
+.deleted{
+    text-decoration: line-through;
+}
