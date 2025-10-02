@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=devic e-width, initial-scale=1.0" />
+    <title>Demo Sticky, Absolute, Relative, Z-Index, Fixed</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f5f6fa;
+        color: #222;
+      }
+      .header {
+        position: sticky;
+        top: 0;
+        background: #1976d2;
+        color: #fff;
+        height: 60px;
+        display: flex;
+        align-items: left ;
+        padding: 0 32px;
+        font-size: 1.5rem;
+        z-index: 999;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+      .container {
+        max-width: 700px;
+        margin: 32px auto;
+        padding: 0 16px;
+      }
+      .card {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            overflow: hidden;
+            width: 340px;
+            position: relative;
+        }
+
+      .card-img {
+        width: 100%;
+        height: 180px;
+        background: #cfd8dc;
+        display: block;
+        object-fit: cover;
+        position: relative;
+      }
+
+      .badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: #e53935;
+            color: #fff;
+            font-size: 0.85rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: bold;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            z-index: 999;
+      }
+      .card-content {
+            padding: 16px;
+        }
+
+      .boxes {
+        position: relative;
+        height: 120px;
+        margin: 40px 0;
+      }
+      
+      .box-a,.box-b {
+        width: 120px;
+        height: 120px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 12px;    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #fff;
+      }
+      
+      .box-a {
+        background: #26a69a;
+        z-index: 1;
+        left: 32px;
+        top: 16px;
+      }
+      .box-b {
+        background: #8e24aa;
+        z-index: 2;
+        left: 72px;
+        top: 40px;
+      }
+
+      .btn-fixed:hover {
+        background: #1565c0;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <div class="header">Header Sticky</div>
+    <div class="container">
+      <div class="card">
+        <img
+          class="card-img"
+          src="/tugas-16/Danau-Toba-edited.webp"
+          alt="Gambar Placeholder"
+        />
+        <span class="badge">New</span>
+        <div class="card-content">
+          <h2>Judul card</h2>
+          <p>Tag</p>
+          <p>Paragraf .... (konten)</p>
+        </div>
+      </div>
+      <div class="boxes">
+        <div class="box-a">Box A</div>
+        <div class="box-b">Box B</div>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod,
+        urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam
+        massa nisi eu velit. Suspendisse potenti. Etiam nec magna euismod,
+        cursus enim nec, dictum erat. Pellentesque habitant morbi tristique
+        senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante
+        ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+        Etiam nec magna euismod, cursus enim nec, dictum erat.
+      </p>
+      <p>
+        Morbi euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc,
+        eget aliquam massa nisi eu velit. Suspendisse potenti. Etiam nec magna
+        euismod, cursus enim nec, dictum erat. Pellentesque habitant morbi
+        tristique senectus et netus et malesuada fames ac turpis egestas.
+        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+        cubilia curae; Etiam nec magna euismod, cursus enim nec, dictum erat.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+        euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget
+        aliquam massa nisi eu velit. Suspendisse potenti. Etiam nec magna
+        euismod, cursus enim nec, dictum erat.
+      </p>
+    </div>
+    <button
+      class="btn-fixed"
+      title="Kembali ke atas"
+      onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    >
+      ↑
+    </button>
+  </body>
+</html>
