@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 40px;
+        text-align: center;
+      }
+
+      h1 {
+        color: #fff;
+        background: linear-gradient(to right, #666, #999);
+        padding: 20px;
+        margin: 0 0 40px 0;
+        font-size: 36px;
+      }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            background-color: white;
+            width: 280px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+      .box {
+        background-color: white;
+        width: 280px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .box h2 {
+        color: white;
+        margin: 0;
+        padding: 15px;
+        font-size: 22px;
+      }
+
+      .ordered {
+        border-top: 5px solid #fffc33;
+      }
+      .ordered h2 {
+        background-color: #fffc33;
+      }
+
+      .unordered {
+        border-top: 5px solid #73ff00;
+      }
+      .unordered h2 {
+        background-color: #73ff00;
+      }
+
+      .description {
+        border-top: 5px solid #5100ff;
+      }
+      .description h2 {
+        background-color: #5100ff;
+      }
+
+      ol,
+      ul,
+      dl {
+        text-align: left;
+        padding: 20px 30px;
+      }
+
+      ol li,
+      ul li {
+        margin-bottom: 10px;
+      }
+
+      ul li ul {
+        list-style-type: circle;
+        margin-left: 20px;
+      }
+
+      dl dt {
+        font-weight: bold;
+        color: #33ffee;
+        margin-top: 10px;
+      }
+
+      dl dd {
+        margin: 5px 0 10px 20px;
+        color: #333;
+        line-height: 1.4em;
+      }
+
+      li {
+        background-color: #f2f2f2;
+        padding: 5px 10px;
+        border-radius: 4px;
+      }
+    </style>
+
+    <h1>List in HTML</h1>
+    <div class="container">
+        <div class="box ordered">
+            <h2>Ordered list</h2>
+            <ol>
+                <li>Information Gathering</li>
+                <li>Planning</li>
+                <li>Design</li>
+                <li>Development</li>
+                <li>Testing & Deployment</li>
+                <li>Maintenance</li>
+            </ol>
+    </div>
+
+    <div class="box unordered">
+        <h2>Unordered List</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+        <ul>
+            <li>SQL</li>
+            <li>PHP</li>
+        </ul>
+        <ul>
+            <li>JavaScript</li>
+            <li>Python</li>
+        </ul>
+    </div>
+
+    <div class="box description">
+        <h2>Description List</h2>
+        <dl>
+            <dt>HTML</dt>
+        <dd>
+            HTML stands for Hyper Text Markup Language. HTML is the standard
+            markup language for creating Web pages. HTML describes the structure
+            of a Web page. 
+        </dd>
+
+            <dt>CSS</dt>
+            <dd>
+              CSS is the acronym of “Cascading Style Sheets”. CSS is the language
+            used to style an HTML document. CSS describes how HTML elements
+            should be displayed.
+            </dd>
+
+            <dt>PHP</dt>
+            <dd>
+            PHP is an acronym for "PHP: Hypertext Preprocessor". PHP is a server
+            scripting language, and a powerful tool for making dynamic and
+            interactive Web pages.
+            </dd>
+        </dl>
+    </div>
+</body>
+</html>
