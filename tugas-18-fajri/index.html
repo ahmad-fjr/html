@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background-color: darkblue;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #001a66;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 10px 0;
+}
+
+.sidebar li {
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background0.3s;
+}
+
+.sidebar li:hover {
+  background-color: #001a66;
+}
+
+/* Konten */
+.content {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  overflow-y: auto;
+  color: #333;
+  font-size: 18px;
+}
+
+    </style>
+  <div class="container">
+    <div class="sidebar">
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </div>
+    <div class="content">
+      <p>ini adalah contoh isi konten nya</p>
+    </div>
+  </div>
+</body>
+</html>
