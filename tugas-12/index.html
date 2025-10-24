@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Wisata: Tanah Lot, Bali</title>
+
+    <!-- Font family (satu pilihan untuk seluruh teks) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root{
+            --bg-color: #f3f7fb; /* sesuaikan kreasi warna di sini */
+            --card-bg: #ffffffcc;
+            --accent: #0b6e4f;
+            --text: #17343b;
+        }
+
+        *{box-sizing:border-box}
+        html,body{
+            height:100%;
+            margin:0;
+            font-family:"Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color:var(--bg-color);
+            color:var(--text);
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+
+        .container{
+            max-width:900px;
+            margin:40px auto;
+            padding:24px;
+        }
+
+        header h1{
+            margin:0 0 18px 0;
+            font-size:2.2rem;
+            color:var(--accent);
+            text-align:center;
+            letter-spacing:0.4px;
+        }
+
+        /* Hero image sebagai background pada sebuah card.
+             Gambar tidak diulang (no-repeat), dipusatkan, dan sisi tumpul (border-radius) */
+        .hero{
+            width:100%;
+            height:360px;
+            margin:0 auto 22px auto;
+            background-image: url("/tugas-12/d.jpg");
+            background-repeat:no-repeat;
+            background-position:center;
+            background-size:cover;
+            border-radius:16px;
+            box-shadow:0 10px 25px rgba(15, 40, 50, 0.08);
+            display:block;
+            overflow:hidden;
+        }
+        /* aksesibilitas: jelaskan gambar untuk pembaca layar */
+        .hero::after{
+            content:"Tanah Lot, salah satu tempat wisata ikonik di Bali";
+            position:absolute;
+            left:-9999px;
+            top:auto;
+            height:1px;
+            width:1px;
+            overflow:hidden;
+        }
+
+        section.card{
+            background:var(--card-bg);
+            padding:18px;
+            border-radius:10px;
+            box-shadow:0 6px 18px rgba(10,20,30,0.04);
+        }
+
+        h2{
+            margin:14px 0 8px 0;
+            color:var(--accent);
+            font-size:1.1rem;
+            font-weight:600;
+        }
+
+        p{
+            margin:0 0 12px 0;
+            line-height:1.6;
+            color:var(--text);
+            font-weight:300;
+        }
+
+        footer{
+            margin-top:18px;
+            text-align:center;
+            font-size:0.85rem;
+            color:#5a6b6f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gambar Senja Pantai Dengan Matahari Cerah Di Tengah Hari Foto</h1>
+        </header>
+
+        <div class="hero" role="img" aria-label="Pemandangan pura di atas batu karang Tanah Lot saat matahari terbenam"></div>
+
+        <section class="card">
+            <h2>Lokasi dan Akses</h2>
+            <p>Tanah Lot terletak di pesisir barat daya Pulau Bali, mudah dijangkau dari Kuta, Seminyak, atau Denpasar. Akses dapat dilakukan menggunakan mobil, motor, atau paket tur harian.</p>
+
+            <h2>Daya Tarik Utama</h2>
+            <p>Pura yang berdiri di atas batu karang besar dengan panorama matahari terbenam menjadi daya tarik utama. Kombinasi ombak, formasi batu, dan kebudayaan menjadikan tempat ini favorit wisatawan lokal maupun mancanegara.</p>
+
+            <h2>Waktu Terbaik Berkunjung</h2>
+            <p>Waktu terbaik adalah saat menjelang matahari terbenam untuk mendapatkan pemandangan yang dramatis. Hindari waktu paling ramai (weekend sore) jika menginginkan suasana lebih tenang.</p>
+
+            <h2>Tips Pengunjung</h2>
+            <p>Kenakan alas kaki yang nyaman karena area berbatu. Hormati adat setempat dengan berpakaian sopan saat memasuki area pura. Bawa kamera untuk menangkap pemandangan, tetapi jangan mengganggu pengunjung lain.</p>
+        </section>
+
+        <footer>
+            Gambar: contoh: Warna, font, dan layout dapat disesuaikan sesuai kreasi.
+        </footer>
+    </div>
+</body>
+</html>
