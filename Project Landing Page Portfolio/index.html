@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <style>
+      body {
+        background: #fff;
+        color: #333;
+      }
+
+      /* Container */
+      .container {
+        width: 85%;
+        margin: auto;
+      }
+
+      /* Navbar */
+      header {
+        background: #fff;
+        padding: 20px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo span {
+        color: #6c63ff;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+      }
+
+      nav a:hover {
+        color: #6c63ff;
+      }
+
+      .btn {
+        background: #6c63ff;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      /* Hero Section */
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 0;
+        background: #f9f9ff;
+      }
+
+      .hero-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .hero-text h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
+
+      .hero-text span {
+        color: #6c63ff;
+      }
+
+      .hero-img img {
+        width: 380px;
+        border-radius: 12px;
+      }
+
+      /* Skills */
+      .skills {
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .skills-grid {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 30px;
+      }
+
+      .skill-card {
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        width: 250px;
+      }
+
+      /* About */
+      .about {
+        padding: 80px 0;
+        background: #f9f9ff;
+      }
+
+      .about-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+      }
+
+      .about-img img {
+        width: 350px;
+        border-radius: 10px;
+      }
+
+      .about-text {
+        max-width: 500px;
+      }
+
+      /* Portfolio */
+      .portfolio {
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .portfolio-grid {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 30px;
+      }
+
+      .portfolio-item {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        padding-bottom: 15px;
+      }
+
+      .portfolio-item img {
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+      }
+
+      /* Contact */
+      .contact {
+        padding: 80px 0;
+        background: #f9f9ff;
+        text-align: center;
+      }
+
+      form {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+      }
+
+      .form-row {
+        display: flex;
+        gap: 15px;
+        width: 100%;
+        max-width: 600px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+
+      /* Footer */
+      footer {
+        background: #fff;
+        padding: 20px 0;
+        border-top: 1px solid #eee;
+        text-align: center;
+      }
+
+      .socials a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #6c63ff;
+      }
+      
+       /* wrapper supaya bisa ditampilkan sama persis */
+  .term-checkbox {
+    display:inline-flex;
+    align-items:center;
+    gap:10px; /* jarak antara kotak & teks */
+    user-select:none;
+    font-size:13px; /* ukuran huruf mendekati gambar */
+    color:#222;      /* warna teks */
+  }
+    /* sembunyikan input native, tapi tetap dapat diakses */
+  .term-checkbox input[type="checkbox"]{
+    position:absolute;
+    opacity:0;
+    width:0;
+    height:0;
+    pointer-events:none;
+  }
+
+  /* kotak kustom */
+  .term-checkbox .box {
+    width:18px;
+    height:18px;
+    min-width:18px;
+    min-height:18px;
+    box-sizing:border-box;
+    border:2px solid #9b9b9b; /* garis tepi mirip gambar */
+    border-radius:4px;
+    background:#fff;
+    display:inline-block;
+    position:relative;
+    flex-shrink:0;
+  }
+
+      /* tanda centang muncul saat checked */
+  .term-checkbox input[type="checkbox"]:checked + .box::after{
+    content: "";
+    position:absolute;
+    left:4px;
+    top:0px;
+    width:6px;
+    height:10px;
+    border:solid #111;
+    border-width:0 2.5px 2.5px 0;
+    transform:rotate(40deg);
+  }
+  /* hover/focus sedikit perubahan untuk aksesibilitas */
+  .term-checkbox:hover .box{ border-color:#7a7a7a; }
+  .term-checkbox input[type="checkbox"]:focus + .box{
+    outline:3px solid rgba(0,120,215,0.15);
+    outline-offset:2px;
+  }
+      /* teks */
+  .term-checkbox .label-text{
+    line-height:1;
+    margin-left:0;
+  }
+    </style>
+    <!-- Navbar -->
+    <header>
+      <div class="container nav">
+        <img src="/Project Landing Page Portfolio/logoipsum-406.png" alt="logoipsum-406">
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="btn">Contact Me</a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-content">5
+        <div class="hero-text">
+          <h4>Halo Semua Saya</h4>
+          <h1>
+            Membangun <span>Website</span><br />
+            Impian Anda dengan<br />
+            Kualitas Terbaik
+          </h1>
+          <p>
+            Saya adalah Web Developer profesional yang siap membantu Anda
+            membuat website impian.
+          </p>
+          <a href="#" class="btn">Get In Touch</a>
+        </div>
+        <div class="hero-img">
+          <img
+            src="/Project Landing Page Portfolio/Group 11 1.png"
+            alt="Foto Profil"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Keahlian -->
+    <section class="skills">
+      <div class="container">
+        <p>My skills</p>
+        <h2>My Expertise</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <img
+              src="/Project Landing Page Portfolio/Strategy & Direction.png"
+              alt="Strategy & Direction"
+            />
+            <h3>Strategy & Direction</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros elementum tristique..
+            </p>
+          </div>
+          <div class="skill-card">
+            <img
+              src="/Project Landing Page Portfolio/Branding & Logo.png"
+              alt="Branding & logo
+"
+            />
+            <h3>Branding & logo</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros elementum tristique..
+            </p>
+          </div>
+          <div class="skill-card">
+            <img
+              src="/Project Landing Page Portfolio/UI & UX Design.png"
+              alt="UI & UX Design
+"
+            />
+            <h3>UI & UX Design</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros elementum tristique..
+            </p>
+          </div>
+          <div class="skill-card">
+            <img src="/Project Landing Page Portfolio/Webflow Development.png" alt="">
+            <h3>Webflow Development</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros elementum tristique..
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tentang Saya -->
+    <section class="about">
+      <div class="container about-content">
+        <div class="about-img">
+          <img
+            src="/Project Landing Page Portfolio/About Me (1).png"
+            alt="Foto Saya"
+          />
+        </div>
+        <div class="about-text">
+          <h2>Tentang Saya</h2>
+          <p>
+            Saya adalah seorang siswa yang sedang duduk dijenjang smp saya
+            sedang belajar IT cara membuat wesite game dengan menggunakan
+            Codingan.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio">
+      <div class="container">
+        <p>Recent Projects</p>
+        <h2>My Portfolio</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <img
+              src="/Project Landing Page Portfolio/Image.png"
+              alt="Project 1"
+            />
+            <h4>Ahuse</h4>
+            <p>Website toko online modern dan cepat.</p>
+          </div>
+          <div class="portfolio-item">
+            <img src="/Project Landing Page Portfolio/d.png" alt="Project 2" />
+            <h4>App Dashboard</h4>
+            <p>Website personal branding profesional.</p>
+          </div>
+          <div class="portfolio-item">
+            <img
+              src="/Project Landing Page Portfolio/Image.png"
+              alt="Project 3"
+            />
+            <h4>Easy Rent</h4>
+            <p>Tempat menulis dan berbagi ide menarik.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+      <div class="container">
+        <h2>Contact Me</h2>
+        <form>
+          <div class="form-row">
+            <input type="text" placeholder="First name"required/>
+            <input type="text" placeholder="Last name"required/>
+          </div>
+          <div class="form-row">
+            <input type="text" placeholder="Email" required />
+            <input type="email" placeholder="Phone number" required />
+          </div>
+          <div class="form-row">
+            <input type="text" placeholder="Choose a topic" required />
+          </div>
+          <textarea placeholder="Pesan..." rows="5" required></textarea>
+          <label class="term-checkbox">
+    <input type="checkbox" />
+    <span class="box" aria-hidden="true"></span>
+    <span class="label-text">I accept the terms</span>
+  </label>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+      <div class="container nav">
+      <img src="/Project Landing Page Portfolio/logoipsum-406.png" alt="logoipsum-406">
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+
+
+      </div>
+            <p>@2025 MyPortofolio Fajri.</p>
+
+  </body>
+</html>
