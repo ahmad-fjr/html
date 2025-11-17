@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0.1 );
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 6px;
+        }
+
+        .box {
+            display: grid;
+            gap: 20px;
+            padding: 20px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        /* MedQu Versi Mobile */
+        @media (max-width: 768px) {
+            body {
+                background-color: lightgreen;
+            }
+            .box {
+                background-color: lightcoral;
+            }
+
+           .box {
+            grid-template-columns: 1fr;
+           }
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <!-- Ukuran -->
+     <div class="box">
+        <div class="product-card">
+        <img src="/tugas-21/m.webp" alt="">
+
+        <h3>Nike Air Force 1 GTX</h3>
+        <p>$210</p>
+        <p>Men's Shoes</p>
+     </div>
+       <div class="product-card">
+        <img src="/tugas-21/p.webp" alt="">
+
+        <h3>Nike Blazer Mid 77</h3>
+        <p>$210</p>
+        <p>Men's Shoes</p>
+     </div>
+       <div class="product-card">
+        <img src="/tugas-21/b.avif" alt="">
+
+        <h3>Nike SB x Run the Jewels Dunk </h3>
+        <p>$210</p>
+        <p>Men's Shoes</p>
+     </div>
+     </div>
+
+</body>
+</html>
