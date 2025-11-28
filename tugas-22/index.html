@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kartu Profil Mini Magang</title>
+    <style>
+      :root {
+        --bg: #0f1724;
+        --card: #0b1220;
+        --accent: #ff6b6b;
+        --muted: #94a3b8;
+        --glass: rgba(255, 255, 255, 0.04);
+        --glass-2: rgba(255, 255, 255, 0.02);
+        --card-w: 340px;
+        --card-h: 460px;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: radial-gradient(
+            circle at 10% 10%,
+            rgba(210, 6, 6, 0.479),
+            transparent 8%
+          ),
+          linear-gradient(180deg, #0b4af4 0%, #689bca 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #bac9db;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        padding: 40px;
+      }
+
+      /* Card stage */
+      .stage {
+        width: var(--card-w);
+        height: var(--card-h);
+        perspective: 1200px;
+      }
+
+      /* Card */
+      .card {
+        width: 100%;
+        height: 100%;
+        border-radius: 14px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.75s cubic-bezier(0.2, 0.9, 0.25, 1);
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(128, 141, 199, 0.452),
+          0 1px 0 rgba(255, 255, 255, 0.715) inset;
+        background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.79),
+            transparent 60%
+          ),
+          var(--card);
+        overflow: hidden;
+      }
+
+      .card.is-flipped {
+        transform: rotateY(180deg);
+      }
+
+      /* shared face */
+      .face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        padding: 22px;
+      }
+
+      /* front */
+      .front {
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .brand {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+      }
+      .logo {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .logo .mark {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--accent), #ff9a76);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.708);
+        box-shadow: 0 6px 16px rgba(255, 107, 107, 0.18);
+        font-size: 18px;
+        letter-spacing: 0.6px;
+      }
+      .logo .title {
+        line-height: 1;
+        font-weight: 600;
+      }
+      .logo .title small {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      /* avatar */
+      .avatar {
+        margin-top: 6px;
+        width: 120px;
+        height: 120px;
+        border-radius: 18px;
+        background: conic-gradient(
+            from 180deg at 50% 50%,
+            rgba(236, 173, 173, 0.03),
+            transparent 20%
+          ),
+          linear-gradient(180deg, #6188db, #3b68c2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 48px;
+        color: rgb(228, 56, 56);
+        font-weight: 700;
+        position: relative;
+        box-shadow: 0 14px 30px rgba(52, 85, 232, 0.6);
+        overflow: hidden;
+        border: 1px solid rgba(179, 14, 14, 0.29);
+      }
+      /* decorative camera icon */
+      .avatar::after {
+        content: "";
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        width: 28px;
+        height: 18px;
+        border-radius: 4px;
+        background: linear-gradient(180deg, #ffffff82, #ffffffdc);
+        transform: rotate(-20deg);
+        opacity: 0.7;
+      }
+
+      .name {
+        margin-top: 12px;
+        text-align: center;
+      }
+      h1 {
+        margin: 0;
+        font-size: 20px;
+        letter-spacing: 0.2px;
+      }
+      h2 {
+        margin: 6px 0 0 0;
+        font-size: 14px;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      .meta {
+        width: 100%;
+        margin-top: 8px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .actions {
+        margin-top: auto;
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .btn {
+        padding: 10px 14px;
+        border-radius: 10px;
+        background: var(--glass);
+        color: var(--muted);
+        border: 1px solid rgba(255, 255, 255, 0.635);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.18s;
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+        color: rgb(234, 95, 95);
+        box-shadow: 0 8px 20px rgba(93, 115, 243, 0.6);
+      }
+
+      /* back */
+      .back {
+        transform: rotateY(180deg);
+        justify-content: flex-start;
+        align-items: stretch;
+      }
+      .back .heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+      }
+      .back .heading h3 {
+        margin: 0;
+        font-size: 16px;
+      }
+      .desc {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.45;
+        margin-top: 10px;
+      }
+
+      .skills {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .skill {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .skill .label {
+        width: 110px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .bar {
+        height: 10px;
+        flex: 1;
+        background: var(--glass-2);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+      .bar > i {
+        display: block;
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, var(--accent), #e47d5b);
+        border-radius: 999px;
+        transition: width 0.9s cubic-bezier(0.2, 0.9, 0.25, 1);
+      }
+
+      .flip-hint {
+        font-size: 12px;
+        color: var(--muted);
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      /* responsive */
+      @media (max-width: 420px) {
+        :root {
+          --card-w: 320px;
+          --card-h: 480px;
+        }
+        .avatar {
+          width: 110px;
+          height: 110px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="stage" aria-label="Kartu Profil Mini Magang">
+      <article
+        class="card"
+        id="card"
+        tabindex="0"
+        role="button"
+        aria-pressed="false"
+        aria-label="Kartu profil, tekan untuk membalik"
+      >
+        <!-- FRONT -->
+        <section class="face front" aria-hidden="false">
+          <div class="brand">
+            <div class="logo" aria-hidden="true">
+              <div class="mark">CELL</div>
+              <div class="title">
+                <strong>Kartu Profil</strong>
+                <small>mini magang Impian</small>
+              </div>
+            </div>
+            <div style="font-size: 12px; color: var(--muted)">ID: 2025-001</div>
+          </div>
+
+          <div
+            style="display: flex; flex-direction: column; align-items: center"
+          >
+            <!-- Avatar - placeholder colored box with initials -->
+            <div class="avatar" aria-hidden="true" title="Avatar">FAH</div>
+
+            <div class="name" role="heading" aria-level="1">
+              <h1>FAJRI AHMAD HARAHAP</h1>
+              <div class="meta">Pondok Tahfizh Plus Abudzar sekolah (SMP & SMA :ikhwan)</div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn" id="detailsBtn" aria-expanded="false">
+              Detail • Deskripsi
+           
+          </div>
+
+          <div class="flip-hint">
+            Klik kartu atau tekan Enter/Spasi untuk melihat deskripsi
+          </div>
+        </section>
+
+        <!-- BACK -->
+        <section class="face back" aria-hidden="true">
+          <div class="heading">
+            <h3>Mini Magang: koki</h3>
+            <div style="color: var(--muted); font-size: 13px">
+              Lokasi: Restoran
+            </div>
+          </div>
+
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+            assumenda rerum quibusdam nemo labore quo eveniet temporibus at
+            autem numquam nesciunt, molestias velit repellat excepturi obcaecati
+            voluptatum esse ad suscipit!
+          </p>
+
+          <div class="skills" aria-hidden="false">
+            <div class="skill">
+              <div class="label">koki</div>
+              <div class="bar"><i data-value="85"></i></div>
+            </div>
+            <div class="skill">
+              <div class="label">Editing</div>
+              <div class="bar"><i data-value="70"></i></div>
+            </div>
+            <div class="skill">
+              <div class="label">Komunikasi</div>
+              <div class="bar"><i data-value="80"></i></div>
+            </div>
+          </div>
+
+          <div
+            style="
+              margin-top: auto;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <button class="btn" id="backBtn">Kembali</button>
+            <button class="btn" id="contactBtn">Kirim Pesan</button>
+          </div>
+        </section>
+      </article>
+    </main>
+
+  </body>
+</html>
